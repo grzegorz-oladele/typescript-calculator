@@ -4,16 +4,15 @@ initEventListener();
 
 function initEventListener() {
 
-    const btn: HTMLElement | null = document.getElementById("exchange");
-    const resultText: HTMLElement | null = document.getElementById("result");
+    const btn: HTMLElement | null = document.querySelector("#exchange")
+    const resultText: HTMLElement | null = document.querySelector("#result")
 
-    const getInputNumberValue = (id : string) : number => {
-        const element: HTMLElement | null = document.getElementById(id);
+    const getInputNumberValue = (id: string): number => {
+        const element: HTMLElement | null = document.querySelector("#" + id);
 
         if (element != null && element instanceof HTMLInputElement) {
             return element.valueAsNumber;
-        }
-        else {
+        } else {
             throw new Error(`HTML element is null or wrong type`);
         }
     }
@@ -29,15 +28,13 @@ function initEventListener() {
                     getInputNumberValue("copper")
                 );
                 if (resultText !== null) {
-                    resultText.innerText = `${ex.calculateToCopper()}`;
+                    resultText.innerText = `Wynik: ${ex.calculateToCopper()}`;
                 }
             });
-        }
-        else {
+        } else {
             throw new Error(`HTML element for exchange is not a button`);
         }
-    }
-    else {
+    } else {
         throw new Error(`Button for exchange not found`);
     }
 }

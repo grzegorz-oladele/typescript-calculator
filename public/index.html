@@ -5,29 +5,41 @@
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <meta http-equiv="x-ua-compatible" content="ie=dge">
     <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
     <section>
-        <form>
-            <label for="gold">
-                Złote monety:
-                <input id="gold" type="number" placeholder="Podaj liczbę złotych monet" value="0">
-            </label>
-            <label for="silver">
-                Srebrne monety:
-                <input id="silver" type="number" placeholder="Podaj liczbę srebrnych monet" value="0">
-            </label>
-            <label for="copper">
-                Złote monety:
-                <input id="copper" type="number" placeholder="Podaj liczbę miedzianych monet monet" value="0">
-            </label><br>
-            <button type="submit" id="exchange">Przelicz</button>
-            <button type="reset">Wyczyść</button>
-        </form>
+        <div class="wrapper">
+            <div class="top">
+                <h1>Kalkulator monet</h1>
+                <p>Przelicz wartość na miedziane monety</p>
+            </div>
+            <form class="form">
+                <label for="gold">
+                    Złote monety:
+                    <input id="gold" type="number" placeholder="Podaj liczbę złotych monet" value="0">
+                </label>
+                <label for="silver">
+                    Srebrne monety:
+                    <input id="silver" type="number" placeholder="Podaj liczbę srebrnych monet" value="0">
+                </label>
+                <label for="copper">
+                    Miedziane monety:
+                    <input id="copper" type="number" placeholder="Podaj liczbę miedzianych monet monet" value="0">
+                </label><br>
+                <div class="buttons">
+                    <button id="exchange">Przelicz</button>
+                    <button type="reset">Wyczyść</button>
+                </div>
+                <div class="result">
+                    <p id="result"></p>
+                </div>
+            </form>
+        </div>
     </section>
     <section>
-        <p id="result"></p>
+        <!--        <p id="result"></p>-->
     </section>
 </main>
 <script src="src/Main.ts"></script>
